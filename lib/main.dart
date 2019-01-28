@@ -25,22 +25,22 @@ class MyHomePage extends StatefulWidget {
 class MyHomePageState extends State<MyHomePage> {
   List<Post> _posts = [];
 
-  // @override
-  // void initState() {
-  //   super.initState();
-  //   getReddit().then((posts) {
-  //     setState(() {
-  //       _posts = posts;
-  //     });
-  //   });
-  // }
+  @override
+  void initState() {
+    super.initState();
+    getReddit().then((posts) {
+      setState(() {
+        _posts = posts;
+      });
+    });
+  }
 
   List<Widget> buildListTiles() {
     return _posts
         .map((post) => ListTile(
               leading: CircleAvatar(
                   child: Image.network(
-                '${!post.thumbnail.contains(".jpg")  ? "http://via.placeholder.com/300" : post.thumbnail}',
+                '${!post.thumbnail.contains(".jpg") ? "http://via.placeholder.com/300" : post.thumbnail}',
                 scale: 0.2,
               )),
               title: Text('Title: ${post.title} by ${post.author}'),
@@ -71,6 +71,7 @@ class MyHomePageState extends State<MyHomePage> {
             child: CircularProgressIndicator(),
           ),
           secondChild: ListView(
+            shrinkWrap: true,
             children: buildListTiles(),
           ),
           crossFadeState: _posts.isNotEmpty

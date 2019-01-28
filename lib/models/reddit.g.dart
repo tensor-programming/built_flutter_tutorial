@@ -3,16 +3,8 @@
 part of 'reddit.dart';
 
 // **************************************************************************
-// Generator: BuiltValueGenerator
+// BuiltValueGenerator
 // **************************************************************************
-
-// ignore_for_file: always_put_control_body_on_new_line
-// ignore_for_file: annotate_overrides
-// ignore_for_file: avoid_annotating_with_dynamic
-// ignore_for_file: avoid_returning_this
-// ignore_for_file: omit_local_variable_types
-// ignore_for_file: prefer_expression_function_bodies
-// ignore_for_file: sort_constructors_first
 
 Serializer<Reddit> _$redditSerializer = new _$RedditSerializer();
 Serializer<Children> _$childrenSerializer = new _$ChildrenSerializer();
@@ -27,7 +19,7 @@ class _$RedditSerializer implements StructuredSerializer<Reddit> {
 
   @override
   Iterable serialize(Serializers serializers, Reddit object,
-      {FullType specifiedType: FullType.unspecified}) {
+      {FullType specifiedType = FullType.unspecified}) {
     final result = <Object>[
       'data',
       serializers.serialize(object.data,
@@ -39,7 +31,7 @@ class _$RedditSerializer implements StructuredSerializer<Reddit> {
 
   @override
   Reddit deserialize(Serializers serializers, Iterable serialized,
-      {FullType specifiedType: FullType.unspecified}) {
+      {FullType specifiedType = FullType.unspecified}) {
     final result = new RedditBuilder();
 
     final iterator = serialized.iterator;
@@ -67,7 +59,7 @@ class _$ChildrenSerializer implements StructuredSerializer<Children> {
 
   @override
   Iterable serialize(Serializers serializers, Children object,
-      {FullType specifiedType: FullType.unspecified}) {
+      {FullType specifiedType = FullType.unspecified}) {
     final result = <Object>[
       'children',
       serializers.serialize(object.children,
@@ -80,7 +72,7 @@ class _$ChildrenSerializer implements StructuredSerializer<Children> {
 
   @override
   Children deserialize(Serializers serializers, Iterable serialized,
-      {FullType specifiedType: FullType.unspecified}) {
+      {FullType specifiedType = FullType.unspecified}) {
     final result = new ChildrenBuilder();
 
     final iterator = serialized.iterator;
@@ -110,7 +102,7 @@ class _$DataSerializer implements StructuredSerializer<Data> {
 
   @override
   Iterable serialize(Serializers serializers, Data object,
-      {FullType specifiedType: FullType.unspecified}) {
+      {FullType specifiedType = FullType.unspecified}) {
     final result = <Object>[
       'data',
       serializers.serialize(object.data, specifiedType: const FullType(Post)),
@@ -121,7 +113,7 @@ class _$DataSerializer implements StructuredSerializer<Data> {
 
   @override
   Data deserialize(Serializers serializers, Iterable serialized,
-      {FullType specifiedType: FullType.unspecified}) {
+      {FullType specifiedType = FullType.unspecified}) {
     final result = new DataBuilder();
 
     final iterator = serialized.iterator;
@@ -149,7 +141,7 @@ class _$PostSerializer implements StructuredSerializer<Post> {
 
   @override
   Iterable serialize(Serializers serializers, Post object,
-      {FullType specifiedType: FullType.unspecified}) {
+      {FullType specifiedType = FullType.unspecified}) {
     final result = <Object>[
       'id',
       serializers.serialize(object.id, specifiedType: const FullType(String)),
@@ -176,7 +168,7 @@ class _$PostSerializer implements StructuredSerializer<Post> {
 
   @override
   Post deserialize(Serializers serializers, Iterable serialized,
-      {FullType specifiedType: FullType.unspecified}) {
+      {FullType specifiedType = FullType.unspecified}) {
     final result = new PostBuilder();
 
     final iterator = serialized.iterator;
@@ -228,7 +220,9 @@ class _$Reddit extends Reddit {
       (new RedditBuilder()..update(updates)).build();
 
   _$Reddit._({this.data}) : super._() {
-    if (data == null) throw new BuiltValueNullFieldError('Reddit', 'data');
+    if (data == null) {
+      throw new BuiltValueNullFieldError('Reddit', 'data');
+    }
   }
 
   @override
@@ -239,10 +233,9 @@ class _$Reddit extends Reddit {
   RedditBuilder toBuilder() => new RedditBuilder()..replace(this);
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     if (identical(other, this)) return true;
-    if (other is! Reddit) return false;
-    return data == other.data;
+    return other is Reddit && data == other.data;
   }
 
   @override
@@ -276,7 +269,9 @@ class RedditBuilder implements Builder<Reddit, RedditBuilder> {
 
   @override
   void replace(Reddit other) {
-    if (other == null) throw new ArgumentError.notNull('other');
+    if (other == null) {
+      throw new ArgumentError.notNull('other');
+    }
     _$v = other as _$Reddit;
   }
 
@@ -314,8 +309,9 @@ class _$Children extends Children {
       (new ChildrenBuilder()..update(updates)).build();
 
   _$Children._({this.children}) : super._() {
-    if (children == null)
+    if (children == null) {
       throw new BuiltValueNullFieldError('Children', 'children');
+    }
   }
 
   @override
@@ -326,10 +322,9 @@ class _$Children extends Children {
   ChildrenBuilder toBuilder() => new ChildrenBuilder()..replace(this);
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     if (identical(other, this)) return true;
-    if (other is! Children) return false;
-    return children == other.children;
+    return other is Children && children == other.children;
   }
 
   @override
@@ -364,7 +359,9 @@ class ChildrenBuilder implements Builder<Children, ChildrenBuilder> {
 
   @override
   void replace(Children other) {
-    if (other == null) throw new ArgumentError.notNull('other');
+    if (other == null) {
+      throw new ArgumentError.notNull('other');
+    }
     _$v = other as _$Children;
   }
 
@@ -402,7 +399,9 @@ class _$Data extends Data {
       (new DataBuilder()..update(updates)).build();
 
   _$Data._({this.data}) : super._() {
-    if (data == null) throw new BuiltValueNullFieldError('Data', 'data');
+    if (data == null) {
+      throw new BuiltValueNullFieldError('Data', 'data');
+    }
   }
 
   @override
@@ -413,10 +412,9 @@ class _$Data extends Data {
   DataBuilder toBuilder() => new DataBuilder()..replace(this);
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     if (identical(other, this)) return true;
-    if (other is! Data) return false;
-    return data == other.data;
+    return other is Data && data == other.data;
   }
 
   @override
@@ -449,7 +447,9 @@ class DataBuilder implements Builder<Data, DataBuilder> {
 
   @override
   void replace(Data other) {
-    if (other == null) throw new ArgumentError.notNull('other');
+    if (other == null) {
+      throw new ArgumentError.notNull('other');
+    }
     _$v = other as _$Data;
   }
 
@@ -507,15 +507,27 @@ class _$Post extends Post {
       this.subreddit,
       this.ups})
       : super._() {
-    if (id == null) throw new BuiltValueNullFieldError('Post', 'id');
-    if (author == null) throw new BuiltValueNullFieldError('Post', 'author');
-    if (url == null) throw new BuiltValueNullFieldError('Post', 'url');
-    if (title == null) throw new BuiltValueNullFieldError('Post', 'title');
-    if (thumbnail == null)
+    if (id == null) {
+      throw new BuiltValueNullFieldError('Post', 'id');
+    }
+    if (author == null) {
+      throw new BuiltValueNullFieldError('Post', 'author');
+    }
+    if (url == null) {
+      throw new BuiltValueNullFieldError('Post', 'url');
+    }
+    if (title == null) {
+      throw new BuiltValueNullFieldError('Post', 'title');
+    }
+    if (thumbnail == null) {
       throw new BuiltValueNullFieldError('Post', 'thumbnail');
-    if (subreddit == null)
+    }
+    if (subreddit == null) {
       throw new BuiltValueNullFieldError('Post', 'subreddit');
-    if (ups == null) throw new BuiltValueNullFieldError('Post', 'ups');
+    }
+    if (ups == null) {
+      throw new BuiltValueNullFieldError('Post', 'ups');
+    }
   }
 
   @override
@@ -526,10 +538,10 @@ class _$Post extends Post {
   PostBuilder toBuilder() => new PostBuilder()..replace(this);
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     if (identical(other, this)) return true;
-    if (other is! Post) return false;
-    return id == other.id &&
+    return other is Post &&
+        id == other.id &&
         author == other.author &&
         url == other.url &&
         title == other.title &&
@@ -615,7 +627,9 @@ class PostBuilder implements Builder<Post, PostBuilder> {
 
   @override
   void replace(Post other) {
-    if (other == null) throw new ArgumentError.notNull('other');
+    if (other == null) {
+      throw new ArgumentError.notNull('other');
+    }
     _$v = other as _$Post;
   }
 
@@ -639,3 +653,5 @@ class PostBuilder implements Builder<Post, PostBuilder> {
     return _$result;
   }
 }
+
+// ignore_for_file: always_put_control_body_on_new_line,annotate_overrides,avoid_annotating_with_dynamic,avoid_as,avoid_catches_without_on_clauses,avoid_returning_this,lines_longer_than_80_chars,omit_local_variable_types,prefer_expression_function_bodies,sort_constructors_first,test_types_in_equals,unnecessary_const,unnecessary_new
